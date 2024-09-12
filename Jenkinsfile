@@ -10,12 +10,16 @@ pipeline {
 
         stage('clean et Installation les dependances') {
             steps {
-                sh 'mvn -v'
+                withMaven{
+                sh 'mvn clean install'
+                }
             }
         }
          stage('Execution des tests') {
             steps {
+                withMaven{
                 sh 'mvn  test'
+                }    
             }
         }
        
