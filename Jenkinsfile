@@ -22,6 +22,14 @@ pipeline {
                 }    
             }
         }
+
+        stage('Installer Node.js et Newman') {
+            agent { docker 'node:18' } // Utilisation de l'image Docker officielle Node.js
+            steps {
+                sh 'node --version' 
+                sh 'npm install -g newman' 
+            }
+        }
        
     }
      post{
