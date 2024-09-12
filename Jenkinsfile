@@ -11,7 +11,7 @@ pipeline {
         stage('clean et Installation les dependances') {
             steps {
                 withMaven{
-                sh 'mvn clean install'
+                sh 'mvn clean '
                 }
             }
         }
