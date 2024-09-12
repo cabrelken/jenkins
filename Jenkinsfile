@@ -1,4 +1,3 @@
-yml
 pipeline {
     agent any
    
